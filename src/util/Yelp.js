@@ -29,6 +29,7 @@ const Yelp = {
       }).then(response => {
         return response.json();
       }).then(jsonResponse => {
+        /* see https://www.yelp.ca/developers/documentation/v3/business_search for response body */
         if (jsonResponse.businesses) {
           return jsonResponse.businesses.map(business => ({
             id: business.id,
@@ -36,7 +37,7 @@ const Yelp = {
             name: business.name,
             address: business.location.address1,
             city: business.location.city,
-            state: business.location.state_code,
+            state: business.location.state,
             zipCode: business.location.zip_code,
             category: business.categories[0].title,
             rating: business.rating,

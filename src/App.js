@@ -15,9 +15,9 @@ import Yelp from './util/Yelp';
   category: 'Italian',
   rating: 4.5,
   reviewCount: 90
-};*/
+};
 
-//const businesses = [business,business,business,business,business,business];
+//const businesses = [business,business,business,business,business,business];*/
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class App extends Component {
     this.searchYelp = this.searchYelp.bind(this);
   }
   searchYelp(term, location, sortBy) {
-      //console.log('Searching ' + term + ' in ' + location + ' sorted by ' + sortBy);
+      /* console.log('Searching ' + term + ' in ' + location + ' sorted by ' + sortBy); */
       Yelp.search(term, location, sortBy).then(businesses => {
         this.setState({
           businesses: businesses
